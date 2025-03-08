@@ -2,12 +2,13 @@
 #include <iostream>
 #include <string>
 
-struct Contain
+class Contain
 {
-    std::string a{};
-    std::string b{};
-    std::string c{};
-    std::string d{};
+  public:
+    std::string city;
+    std::string street;
+    std::string house;
+    std::string apartment;
 };
 
 bool read(int& sum, Contain*& containArr)
@@ -24,10 +25,10 @@ bool read(int& sum, Contain*& containArr)
 
     for (int index = 0; index < sum; ++index)
     {
-        inputFile >> containArr[index].a;
-        inputFile >> containArr[index].b;
-        inputFile >> containArr[index].c;
-        inputFile >> containArr[index].d;
+        inputFile >> containArr[index].city;
+        inputFile >> containArr[index].street;
+        inputFile >> containArr[index].house;
+        inputFile >> containArr[index].apartment;
     }
 
     inputFile.close();
@@ -46,10 +47,10 @@ bool writeReverse(int& sum, Contain*& containArr)
     outputFile << sum << std::endl;
     for (int index = 0; index < sum; ++index)
     {
-        outputFile << containArr[sum - 1 - index].a << ", ";
-        outputFile << containArr[sum - 1 - index].b << ", ";
-        outputFile << containArr[sum - 1 - index].c << ", ";
-        outputFile << containArr[sum - 1 - index].d;
+        outputFile << containArr[sum - 1 - index].city << ", ";
+        outputFile << containArr[sum - 1 - index].street << ", ";
+        outputFile << containArr[sum - 1 - index].house << ", ";
+        outputFile << containArr[sum - 1 - index].apartment;
         outputFile << std::endl;
     }
 
@@ -70,6 +71,7 @@ int main()
     if (!writeReverse(sum, containArr))
     {
         return 2;
+        delete[] containArr;
     }
 
     delete[] containArr;
