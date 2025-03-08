@@ -23,7 +23,7 @@ bool read(int& sum, Contain*& containArr)
     inputFile >> sum;
     containArr = new Contain[sum];
 
-    for (int index = 0; index < sum; ++index)
+    for (int index{}; index < sum; ++index)
     {
         inputFile >> containArr[index].city;
         inputFile >> containArr[index].street;
@@ -45,7 +45,7 @@ bool writeReverse(int& sum, Contain*& containArr)
     }
 
     outputFile << sum << std::endl;
-    for (int index = 0; index < sum; ++index)
+    for (int index{}; index < sum; ++index)
     {
         outputFile << containArr[sum - 1 - index].city << ", ";
         outputFile << containArr[sum - 1 - index].street << ", ";
