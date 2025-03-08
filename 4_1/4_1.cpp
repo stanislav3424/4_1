@@ -5,10 +5,10 @@
 class Contain
 {
   public:
-    std::string city;
-    std::string street;
-    std::string house;
-    std::string apartment;
+    std::string city{};
+    std::string street{};
+    std::string house{};
+    std::string apartment{};
 };
 
 bool read(int& sum, Contain*& containArr)
