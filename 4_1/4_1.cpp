@@ -60,7 +60,7 @@ bool writeReverse(int& sum, Contain*& containArr)
 
 int main()
 {
-    int sum = 0;
+    int sum{};
     Contain* containArr = nullptr;
 
     if (!read(sum, containArr))
